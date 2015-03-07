@@ -43,7 +43,7 @@ def aplhabets(file_name, buf=10240, ignore=[], enableEOW=True, enableEOL=True):
 
 def words(file_name, ignoreEOL=True):
 	'''
-		Reads words in the file. uses reader function 
+		Reads words in the file. uses aplhabets function 
 	'''
 	word = ''
 	for apl in aplhabets(file_name):
@@ -71,7 +71,9 @@ def count_words_in_lines(file_name):
 			count = 0	
 
 def wordcount(inputdir='wc_input', outputfilename=os.path.join("wc_output", "wc_result.txt")):
-
+	'''
+		Uses words to count words in all files
+	'''
 	datastore = defaultdict(int)
 
 	for f in files(dir=inputdir):
